@@ -1,9 +1,15 @@
 # 03_picnic
 
 param (
-    $first_food, $second_food
+    $FirstFood, $SecondFood, $ThirdFood
 )
 
 if ($PSBoundParameters.Count -eq 1) {
-    Write-Host "You are bringing $first_food."
+    Write-Host "You are bringing $($FirstFood.ToLower())."
+}
+elseif ($PSBoundParameters.Count -eq 2) {
+    Write-Host "You are bringing $($FirstFood.ToLower()) and $($SecondFood.ToLower())."
+}
+else {
+    Write-Host "You are bringing $($FirstFood.ToLower()), $($SecondFood.ToLower()) and $($ThirdFood.ToLower())."
 }
